@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil Profesional Minero | Ingeniería Químico-Metalúrgica</title>
+  <meta
+    name="description"
+    content="Sitio web profesional enfocado en minería, hidrometalurgia, lixiviación, análisis químico instrumental y ciberseguridad aplicada a sistemas de producción mineros."
+  />
+  <style>
+    :root {
+      --bg: #f5fbf6;
+      --bg-soft: #eef8f0;
+      --card: #ffffff;
+      --primary: #7bbf95;
+      --primary-dark: #4a8f6a;
+      --secondary: #b8e0c9;
+      --accent: #d8f0df;
+      --accent-2: #f3e9ff;
+      --accent-3: #fff3dd;
+      --text: #234032;
+      --muted: #5c7768;
+      --border: #d9eadf;
+      --shadow: 0 12px 32px rgba(93, 141, 113, 0.12);
+      --radius: 20px;
+      --radius-sm: 14px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, #f3fff6 0%, transparent 28%),
+        radial-gradient(circle at top right, #f7efff 0%, transparent 24%),
+        linear-gradient(180deg, #f8fffa 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(248, 255, 250, 0.88);
+      border-bottom: 1px solid rgba(123, 191, 149, 0.18);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      letter-spacing: 0.2px;
+    }
+
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--secondary), var(--accent-2));
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #ffffffcc;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--secondary);
+      color: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      padding: 70px 0 42px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .panel,
+    .section-card,
+    .gallery-card,
+    .quote-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -40px -40px auto;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, #dff5e7 0%, transparent 68%);
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: var(--primary-dark);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 14px;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: #204534;
+    }
+
+    h2 {
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      color: #2b5a44;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      color: #32684f;
+    }
+
+    .hero p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      padding: 14px 18px;
+      border-radius: 14px;
+      transition: 0.25s ease;
+      font-size: 0.98rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #98d5af);
+      color: white;
+      box-shadow: 0 10px 20px rgba(96, 156, 120, 0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      filter: brightness(0.98);
+    }
+
+    .btn-secondary {
+      background: var(--accent-2);
+      color: #5d4f75;
+      border: 1px solid #e6daf8;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: #efe2ff;
+    }
+
+    .panel {
+      padding: 26px;
+      display: grid;
+      gap: 16px;
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f7fdf8 100%);
+    }
+
+    .mini-stat {
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, var(--bg-soft), #ffffff);
+      border: 1px solid var(--border);
+    }
+
+    .mini-stat strong {
+      display: block;
+      font-size: 1.6rem;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    .section {
+      padding: 28px 0;
+    }
+
+    .section-title {
+      margin-bottom: 18px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin: 0;
+      max-width: 760px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .section-card {
+      padding: 24px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-3);
+      color: #8a6835;
+      font-weight: 700;
+      font-size: 0.82rem;
+      margin-bottom: 12px;
+      border: 1px solid #f2e0b9;
+    }
+
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    ul.clean li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    ul.clean li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .timeline {
+      margin-top: 24px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .step {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 6px solid var(--primary);
+      border-radius: 16px;
+      padding: 18px 18px 18px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .step-number {
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .highlight {
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, #ffffff, #f7fdf9);
+      text-align: left;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight:nth-child(2) {
+      background: linear-gradient(180deg, #fbf7ff, #ffffff);
+    }
+
+    .highlight:nth-child(3) {
+      background: linear-gradient(180deg, #fffaf0, #ffffff);
+    }
+
+    .highlight:nth-child(4) {
+      background: linear-gradient(180deg, #f4fff9, #ffffff);
+    }
+
+    .highlight strong {
+      display: block;
+      font-size: 1.7rem;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+
+    .gallery-wrap {
+      margin-top: 24px;
+    }
+
+    .gallery-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-card {
+      padding: 14px;
+      overflow: hidden;
+    }
+
+    .gallery-image {
+      aspect-ratio: 16 / 11;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px dashed #bddbc8;
+      background:
+        linear-gradient(135deg, rgba(184, 224, 201, 0.8), rgba(243, 233, 255, 0.8));
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .gallery-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery-placeholder {
+      text-align: center;
+      padding: 18px;
+      color: #4d715d;
+    }
+
+    .gallery-placeholder span {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .gallery-meta {
+      padding: 14px 4px 4px;
+    }
+
+    .gallery-meta h4 {
+      margin: 0 0 6px;
+      color: #2e5f49;
+    }
+
+    .gallery-meta p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .file-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 12px;
+      padding: 12px 14px;
+      background: var(--accent);
+      color: var(--primary-dark);
+      border: 1px solid var(--border);
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .file-label:hover {
+      background: #dff2e7;
+    }
+
+    .file-input {
+      display: none;
+    }
+
+    .quote-card {
+      margin-top: 26px;
+      padding: 28px;
+      background:
+        linear-gradient(135deg, #f8fff9 0%, #ffffff 50%, #fbf8ff 100%);
+    }
+
+    .quote-card blockquote {
+      margin: 0;
+      font-size: 1.12rem;
+      color: #355a48;
+      font-weight: 600;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .footer {
+      padding: 38px 0 48px;
+      color: var(--muted);
+    }
+
+    .footer-card {
+      padding: 22px;
+      border-radius: 20px;
+      background: #ffffffc9;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .footer small {
+      display: block;
+      margin-top: 8px;
+      color: #6c8578;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .badge {
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: #f4fbf6;
+      border: 1px solid var(--border);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .cards,
+      .highlight-grid,
+      .three-col,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      .hero-card,
+      .panel,
+      .section-card,
+      .quote-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        <div class="brand-badge">⛏️</div>
+        <div>
+          <div>Perfil Minero Profesional</div>
+          <small style="color:#6a8a79;">Ingeniería Químico-Metalúrgica</small>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#perfil">Perfil</a>
+        <a href="#procesos">Procesos</a>
+        <a href="#piap17">PIAP-17</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#galeria">Galería</a>
+        <a href="#entrevista">Resumen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="hero-card">
+          <div class="eyebrow">🌿 Minería · Hidrometalurgia · Digitalización</div>
+          <h1>Perfil técnico enfocado en minería, procesos y mejora continua</h1>
+          <p>
+            Ingeniera Químico-Metalúrgica con especialización en procesamiento de minerales,
+            hidrometalurgia y análisis químico instrumental, con experiencia en operaciones mineras
+            reales y visión aplicada a control de procesos, optimización metalúrgica y ciberseguridad industrial.
+          </p>
+          <p>
+            Este sitio presenta de forma clara el valor técnico del perfil: desde la toma de muestra,
+            el análisis por absorción atómica y la interpretación metalúrgica, hasta el modelado de procesos,
+            la evaluación de variables críticas y la integración del proyecto PIAP-17 en un entorno minero moderno.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#perfil" class="btn btn-primary">Ver perfil completo</a>
+            <a href="#galeria" class="btn btn-secondary">Agregar 7 fotos del proceso</a>
+          </div>
+
+          <div class="badge-list">
+            <span class="badge">Procesamiento de minerales</span>
+            <span class="badge">Lixiviación</span>
+            <span class="badge">Flotación</span>
+            <span class="badge">Absorción atómica</span>
+            <span class="badge">PIAP-17</span>
+            <span class="badge">SCADA y datos</span>
+          </div>
+        </article>
+
+        <aside class="panel">
+          <div class="mini-stat">
+            <strong>3 niveles</strong>
+            <span>Analítico, de proceso y tecnológico integrados en un mismo perfil.</span>
+          </div>
+          <div class="mini-stat">
+            <strong>5 áreas clave</strong>
+            <span>Muestreo, laboratorio, lixiviación, modelado y control operacional.</span>
+          </div>
+          <div class="mini-stat">
+            <strong>Industria 4.0</strong>
+            <span>Visión aplicada a automatización, monitoreo y ciberseguridad minera.</span>
+          </div>
+          <div class="mini-stat">
+            <strong>Enfoque operativo</strong>
+            <span>Orientado a recuperación metalúrgica, estabilidad de planta y decisiones basadas en datos.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="perfil">
+      <div class="container">
+        <div class="section-title">
+          <h2>1. Perfil profesional con enfoque minero</h2>
+          <p class="section-subtitle">
+            Visión integral del perfil profesional desde el análisis químico hasta la optimización metalúrgica en planta.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="section-card">
+            <span class="tag">Perfil profesional</span>
+            <h3>Base técnica del perfil</h3>
+            <p>
+              Ingeniera Químico-Metalúrgica con especialización en procesamiento de minerales,
+              hidrometalurgia y análisis químico instrumental, con experiencia en operaciones mineras reales
+              en Grupo México.
+            </p>
+            <ul class="clean">
+              <li>Capacidad para integrar muestreo técnico y análisis de laboratorio.</li>
+              <li>Uso de absorción atómica para cuantificación de metales.</li>
+              <li>Evaluación de variables de proceso orientadas a recuperación metalúrgica.</li>
+              <li>Enfoque en control operativo y mejora continua en planta.</li>
+            </ul>
+          </article>
+
+          <article class="section-card">
+            <span class="tag">Valor para minería</span>
+            <h3>Aporte directo a operación y laboratorio</h3>
+            <ul class="clean">
+              <li>Generación de datos confiables para control metalúrgico.</li>
+              <li>Soporte a balances metalúrgicos indirectos por análisis químico.</li>
+              <li>Interpretación técnica para toma de decisiones en tiempo real.</li>
+              <li>Relación entre mineralogía, proceso y recuperación final.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="highlight-grid">
+          <div class="highlight">
+            <strong>01</strong>
+            Análisis químico instrumental aplicado a soluciones, pulpas y control de metales.
+          </div>
+          <div class="highlight">
+            <strong>02</strong>
+            Evaluación de variables críticas en flotación, lixiviación y recuperación.
+          </div>
+          <div class="highlight">
+            <strong>03</strong>
+            Diseño y validación de pruebas metalúrgicas para optimizar procesos.
+          </div>
+          <div class="highlight">
+            <strong>04</strong>
+            Integración de digitalización, automatización y protección de sistemas industriales.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="procesos">
+      <div class="container">
+        <div class="section-title">
+          <h2>2. Análisis técnico de experiencia y procesos mineros</h2>
+          <p class="section-subtitle">
+            Desarrollo profesional enfocado en análisis ambiental, hidrometalurgia, lixiviación de litio y cobre, y modelado de procesos.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="section-card">
+            <span class="tag">Análisis ambiental aplicado a minería</span>
+            <h3>Aporte técnico al sector minero</h3>
+            <ul class="clean">
+              <li>Muestreo técnico en campo de soluciones de proceso como PLS y raffinate.</li>
+              <li>Muestreo de pulpas de flotación y ambientes laborales.</li>
+              <li>Cuantificación de metales mediante absorción atómica.</li>
+              <li>Control de leyes en soluciones y monitoreo de pérdidas metalúrgicas.</li>
+              <li>Cumplimiento ambiental y ocupacional con énfasis en exposición a metales pesados.</li>
+              <li>Comprensión de puntos críticos del proceso: celdas, alimentación y descargas.</li>
+              <li>Correlación entre datos analíticos y comportamiento metalúrgico.</li>
+            </ul>
+          </article>
+
+          <article class="section-card">
+            <span class="tag">Valor en planta</span>
+            <h3>Impacto operacional</h3>
+            <ul class="clean">
+              <li>Mejora en control metalúrgico mediante datos confiables.</li>
+              <li>Soporte en balances metalúrgicos indirectos por análisis químico.</li>
+              <li>Base técnica para toma de decisiones rápidas y efectivas.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="timeline">
+          <article class="step">
+            <div class="step-number">3. Lixiviación de litio – ruta metalúrgica integral</div>
+            <h3>Contribución técnica</h3>
+            <ul class="clean">
+              <li><strong>Conminución:</strong> trituración y molienda para control de liberación mineral y optimización granulométrica.</li>
+              <li><strong>Flotación selectiva:</strong> preconcentración del mineral valioso y reducción de masa tratada en lixiviación.</li>
+              <li><strong>Lixiviación ácida:</strong> disolución selectiva del metal con evaluación de pH, concentración de ácido, temperatura, tiempo de residencia y relación sólido-líquido.</li>
+              <li><strong>Cinética de disolución:</strong> evaluación del sistema en el tiempo e identificación de condiciones óptimas de extracción.</li>
+              <li><strong>Balance metalúrgico:</strong> determinación de recuperación global e identificación de pérdidas en el circuito.</li>
+            </ul>
+            <p>
+              Este enfoque demuestra capacidad para diseñar y optimizar circuitos hidrometalúrgicos con aplicación directa a lixiviación de cobre, oro y otros metales.
+            </p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">4. Lixiviación en columna de cobre</div>
+            <h3>Aplicación técnica y modelado del proceso</h3>
+            <ul class="clean">
+              <li>Simulación de procesos tipo heap leaching y lixiviación percolante.</li>
+              <li>Evaluación de permeabilidad del lecho, distribución de solución y eficiencia de contacto sólido-líquido.</li>
+              <li>Monitoreo de extracción de Cu²⁺.</li>
+              <li>Análisis de consumo de ácido, tamaño de partícula y tiempo de ciclo.</li>
+              <li>Uso de Runge-Kutta para modelar cinética, predecir recuperación y simular el comportamiento del proceso.</li>
+            </ul>
+            <p>
+              El valor principal es la capacidad para anticipar el desempeño de la lixiviación y optimizar condiciones operativas antes del escalamiento a planta.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="habilidades">
+      <div class="container">
+        <div class="section-title">
+          <h2>5. Habilidades técnicas aplicadas a minería</h2>
+          <p class="section-subtitle">
+            Competencias orientadas al control de procesos, análisis de datos, pruebas metalúrgicas y trabajo colaborativo en planta.
+          </p>
+        </div>
+
+        <div class="three-col">
+          <article class="section-card">
+            <span class="tag">Control de procesos</span>
+            <ul class="clean">
+              <li>Interpretación de pH y granulometría.</li>
+              <li>Seguimiento de dosificación de reactivos.</li>
+              <li>Análisis de leyes de alimentación y concentrados.</li>
+              <li>Comprensión de variables que afectan recuperación y estabilidad.</li>
+            </ul>
+          </article>
+
+          <article class="section-card">
+            <span class="tag">Análisis de datos</span>
+            <ul class="clean">
+              <li>Uso de herramientas estadísticas para detectar desviaciones.</li>
+              <li>Optimización de condiciones operativas.</li>
+              <li>Validación de resultados metalúrgicos.</li>
+              <li>Enfoque en decisiones basadas en datos confiables.</li>
+            </ul>
+          </article>
+
+          <article class="section-card">
+            <span class="tag">Pruebas y trabajo en planta</span>
+            <ul class="clean">
+              <li>Diseño experimental y definición de variables.</li>
+              <li>Evaluación de recuperación metalúrgica.</li>
+              <li>Comparación de escenarios operativos.</li>
+              <li>Integración con operación, laboratorio e ingeniería.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="piap17">
+      <div class="container">
+        <div class="section-title">
+          <h2>6. PIAP-17 – sistema de producción con ciberseguridad en minería</h2>
+          <p class="section-subtitle">
+            Aplicación del concepto de Industria 4.0 a minería mediante digitalización, monitoreo inteligente y protección de infraestructura crítica.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="section-card">
+            <span class="tag">Sistema de producción minero</span>
+            <h3>Estructura de operación moderna</h3>
+            <ul class="clean">
+              <li><strong>Extracción:</strong> minado subterráneo o a cielo abierto y transporte de mineral.</li>
+              <li><strong>Procesamiento:</strong> trituración, molienda, flotación o lixiviación y recuperación de metal.</li>
+              <li><strong>Gestión de residuos:</strong> manejo de jales y soluciones residuales.</li>
+              <li><strong>Control y automatización:</strong> sensores, SCADA y PLCs en planta.</li>
+            </ul>
+          </article>
+
+          <article class="section-card">
+            <span class="tag">Ciberseguridad industrial</span>
+            <h3>Integración técnica del proyecto PIAP-17</h3>
+            <ul class="clean">
+              <li>Monitoreo en tiempo real de variables críticas del proceso.</li>
+              <li>Detección de anomalías mediante inteligencia artificial.</li>
+              <li>Validación cruzada de datos operativos.</li>
+              <li>Protección de sistemas de control industrial.</li>
+              <li>Prevención de manipulación de datos de sensores y fallas en control automático.</li>
+              <li>Mitigación de riesgos por alteración de dosificación de reactivos o interrupción operativa.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="timeline">
+          <article class="step">
+            <div class="step-number">6.3 Aplicación directa a planta</div>
+            <h3>Ejemplo en flotación</h3>
+            <p>
+              Si un sensor reporta pH = 10, el sistema puede comparar ese dato contra patrones históricos y detectar una desviación anómala.
+              A partir de ello, la IA puede alertar una posible falla de sensor, problema en dosificación o alteración externa.
+            </p>
+            <ul class="clean">
+              <li>Se evita pérdida de recuperación metalúrgica.</li>
+              <li>Se reduce el riesgo de contaminación de concentrado.</li>
+              <li>Se protege la continuidad operativa y la infraestructura crítica.</li>
+            </ul>
+          </article>
+
+          <article class="step">
+            <div class="step-number">6.4 Beneficios en minería</div>
+            <ul class="clean">
+              <li>Mayor estabilidad operativa.</li>
+              <li>Reducción de pérdidas metalúrgicas.</li>
+              <li>Protección de infraestructura crítica.</li>
+              <li>Optimización basada en datos confiables.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="integracion">
+      <div class="container">
+        <div class="section-title">
+          <h2>7. Integración total del perfil a minería</h2>
+          <p class="section-subtitle">
+            El perfil combina tres niveles estratégicos que aportan valor técnico y operativo a una operación minera moderna.
+          </p>
+        </div>
+
+        <div class="three-col">
+          <article class="section-card">
+            <span class="tag">Nivel analítico</span>
+            <ul class="clean">
+              <li>Cuantificación de metales.</li>
+              <li>Validación y confiabilidad de datos.</li>
+              <li>Interpretación química con impacto operacional.</li>
+            </ul>
+          </article>
+
+          <article class="section-card">
+            <span class="tag">Nivel de proceso</span>
+            <ul class="clean">
+              <li>Lixiviación.</li>
+              <li>Flotación.</li>
+              <li>Evaluación de variables operativas.</li>
+              <li>Optimización de recuperación metalúrgica.</li>
+            </ul>
+          </article>
+
+          <article class="section-card">
+            <span class="tag">Nivel tecnológico</span>
+            <ul class="clean">
+              <li>Análisis de datos.</li>
+              <li>Lógica de sistemas.</li>
+              <li>Digitalización, automatización y control.</li>
+              <li>Visión de ciberseguridad aplicada a planta.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="galeria">
+      <div class="container">
+        <div class="section-title">
+          <h2>Galería del proceso minero</h2>
+          <p class="section-subtitle">
+            Aquí puedes colocar 7 fotos relacionadas al proceso. La página permite cargarlas directamente desde tu computadora para previsualizarlas en el navegador.
+          </p>
+        </div>
+
+        <div class="gallery-wrap">
+          <div class="gallery-head">
+            <div>
+              <h3 style="margin-bottom:6px;">7 espacios editables para imágenes</h3>
+              <p style="margin:0;color:var(--muted);">
+                Sugerencias: muestreo, trituración, molienda, flotación, lixiviación, laboratorio y control digital/SCADA.
+              </p>
+            </div>
+            <button class="btn btn-secondary" id="clearGallery">Limpiar galería</button>
+          </div>
+
+          <div class="gallery-grid" id="galleryGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="entrevista">
+      <div class="container">
+        <div class="section-title">
+          <h2>8. Resumen final para entrevista</h2>
+        </div>
+
+        <div class="quote-card">
+          <blockquote>
+            “Mi experiencia integra análisis químico instrumental, evaluación de procesos hidrometalúrgicos y comprensión de sistemas operativos en minería. He trabajado desde la toma de muestra hasta la interpretación metalúrgica, incluyendo modelado y optimización de procesos. Además, tengo una visión de digitalización y control de procesos mediante herramientas tecnológicas, lo que me permite aportar tanto en operación como en mejora continua y modernización de sistemas mineros.”
+          </blockquote>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-card">
+        <strong style="color:#2f5f49;">Sitio listo para GitHub Pages</strong>
+        <small>
+          Guarda este archivo como <strong>index.html</strong> dentro de un repositorio de GitHub y actívalo desde GitHub Pages.
+          No requiere servidor ni backend.
+        </small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const galleryData = [
+      {
+        id: 1,
+        title: "Muestreo técnico",
+        description: "Fotografía sugerida: toma de muestras en campo o soluciones de proceso."
+      },
+      {
+        id: 2,
+        title: "Trituración y molienda",
+        description: "Fotografía sugerida: etapa de conminución y preparación del mineral."
+      },
+      {
+        id: 3,
+        title: "Flotación selectiva",
+        description: "Fotografía sugerida: celdas, pulpas o etapa de preconcentración."
+      },
+      {
+        id: 4,
+        title: "Lixiviación ácida",
+        description: "Fotografía sugerida: columnas, pilas o pruebas experimentales."
+      },
+      {
+        id: 5,
+        title: "Laboratorio metalúrgico",
+        description: "Fotografía sugerida: absorción atómica, análisis químico o preparación de muestras."
+      },
+      {
+        id: 6,
+        title: "Recuperación y control",
+        description: "Fotografía sugerida: monitoreo de variables, paneles o balances metalúrgicos."
+      },
+      {
+        id: 7,
+        title: "Digitalización y PIAP-17",
+        description: "Fotografía sugerida: sensores, SCADA, automatización o monitoreo inteligente."
+      }
+    ];
+
+    const galleryGrid = document.getElementById("galleryGrid");
+    const clearGalleryBtn = document.getElementById("clearGallery");
+
+    function getStorageKey(id) {
+      return `mineria_galeria_img_${id}`;
+    }
+
+    function createGalleryCard(item) {
+      const savedImage = localStorage.getItem(getStorageKey(item.id));
+
+      const card = document.createElement("article");
+      card.className = "gallery-card";
+
+      card.innerHTML = `
+        <div class="gallery-image" id="preview-${item.id}">
+          ${
+            savedImage
+              ? `<img src="${savedImage}" alt="${item.title}">`
+              : `
+                <div class="gallery-placeholder">
+                  <span>📷</span>
+                  <strong>${item.title}</strong>
+                  <div>Espacio para imagen ${item.id}</div>
+                </div>
+              `
+          }
+        </div>
+        <div class="gallery-meta">
+          <h4>${item.title}</h4>
+          <p>${item.description}</p>
+          <label class="file-label" for="file-${item.id}">Subir foto</label>
+          <input class="file-input" id="file-${item.id}" type="file" accept="image/*" />
+        </div>
+      `;
+
+      const input = card.querySelector(`#file-${item.id}`);
+      const preview = card.querySelector(`#preview-${item.id}`);
+
+      input.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const result = e.target.result;
+          localStorage.setItem(getStorageKey(item.id), result);
+          preview.innerHTML = `<img src="${result}" alt="${item.title}">`;
+        };
+        reader.readAsDataURL(file);
+      });
+
+      return card;
+    }
+
+    function renderGallery() {
+      galleryGrid.innerHTML = "";
+      galleryData.forEach((item) => {
+        galleryGrid.appendChild(createGalleryCard(item));
+      });
+    }
+
+    clearGalleryBtn.addEventListener("click", () => {
+      galleryData.forEach((item) => localStorage.removeItem(getStorageKey(item.id)));
+      renderGallery();
+    });
+
+    renderGallery();
+  </script>
+</body>
+</html>
