@@ -780,23 +780,23 @@
              - flujo de riego (uniformidad de lixiviación)
              </li>
 
-            <li><strong>Modelado cinético (Runge-Kutta 4° orden):</strong> desarrollo de un modelo matemático para describir la cinética de lixiviación mediante ecuaciones diferenciales del tipo:
+            <li><strong>Modelado cinético (Runge-Kutta 4° orden):</strong> desarrollo de un modelo matemático para describir la cinética de lixiviación mediante ecuaciones diferenciales del tipo:</li>
 
-            dC/dt = k·(Cmax − C)
+             <li>dC/dt = k·(Cmax − C)</li>
 
-              donde:
-- C = concentración de Cu²⁺ en solución  
-- k = constante cinética  
-- Cmax = concentración máxima teórica  
+               <li>donde:</li>
+ <li>- C = concentración de Cu²⁺ en solución</li>  
+ <li>- k = constante cinética</li>
+ <li>- Cmax = concentración máxima teórica</li>  
 
-Implementación en Python usando Runge-Kutta de cuarto orden (RK4) para resolver numéricamente la evolución temporal del sistema, con pasos discretos (Δt) y cálculo iterativo:
+ <li>Implementación en Python usando Runge-Kutta de cuarto orden (RK4) para resolver numéricamente la evolución temporal del sistema, con pasos discretos (Δt) y cálculo iterativo:</li>
 
-k1 = f(t, C)  
-k2 = f(t + Δt/2, C + k1·Δt/2)  
-k3 = f(t + Δt/2, C + k2·Δt/2)  
-k4 = f(t + Δt, C + k3·Δt)  
+ <li>k1 = f(t, C)</li>  
+ <li>k2 = f(t + Δt/2, C + k1·Δt/2)</li>  
+ <li>k3 = f(t + Δt/2, C + k2·Δt/2)</li>
+ <li>k4 = f(t + Δt, C + k3·Δt)</li>
 
-C(t+Δt) = C(t) + (Δt/6)(k1 + 2k2 + 2k3 + k4)
+ <li>C(t+Δt) = C(t) + (Δt/6)(k1 + 2k2 + 2k3 + k4)</li>
 
 </li>
 
@@ -805,9 +805,6 @@ C(t+Δt) = C(t) + (Δt/6)(k1 + 2k2 + 2k3 + k4)
 <li><strong>Balance metalúrgico:</strong> integración de datos de entrada y salida para cuantificar recuperación global, pérdidas y eficiencia del sistema.</li>
 
 </ul>
-            <p>
-              El valor principal es la capacidad para anticipar el desempeño de la lixiviación y optimizar condiciones operativas antes del escalamiento a planta.
-            </p>
           </article>
         </div>
       </div>
@@ -826,30 +823,30 @@ C(t+Δt) = C(t) + (Δt/6)(k1 + 2k2 + 2k3 + k4)
           <article class="section-card">
             <span class="tag">Control de procesos</span>
             <ul class="clean">
-              <li>Interpretación de pH y granulometría.</li>
-              <li>Seguimiento de dosificación de reactivos.</li>
-              <li>Análisis de leyes de alimentación y concentrados.</li>
-              <li>Comprensión de variables que afectan recuperación y estabilidad.</li>
+              <li>Control de pH, densidad de pulpa y granulometría (P80) para estabilidad del circuito.</li>
+              <li>Seguimiento de dosificación de reactivos (g/t) y su impacto en selectividad.</li>
+              <li>Monitoreo de leyes de alimentación, concentrados y colas.</li>
+              <li>Evaluación de recuperación (%) y pérdidas metalúrgicas en operación.</li>
             </ul>
           </article>
 
           <article class="section-card">
             <span class="tag">Análisis de datos</span>
             <ul class="clean">
-              <li>Uso de herramientas estadísticas para detectar desviaciones.</li>
-              <li>Optimización de condiciones operativas.</li>
-              <li>Validación de resultados metalúrgicos.</li>
-              <li>Enfoque en decisiones basadas en datos confiables.</li>
+              <li>Análisis de tendencias de recuperación, ley y consumo de reactivos.</li>
+              <li>Identificación de desviaciones operativas mediante datos históricos.</li>
+              <li>Validación de resultados mediante correlación proceso–análisis químico.</li>
+              <li>Uso de datos para ajuste de condiciones operativas en tiempo real.</li>
             </ul>
           </article>
 
           <article class="section-card">
             <span class="tag">Pruebas y trabajo en planta</span>
             <ul class="clean">
-              <li>Diseño experimental y definición de variables.</li>
-              <li>Evaluación de recuperación metalúrgica.</li>
-              <li>Comparación de escenarios operativos.</li>
-              <li>Integración con operación, laboratorio e ingeniería.</li>
+              <li>Ejecución de pruebas metalúrgicas controlando variables (pH, tamaño, reactivos).</li>
+              <li>Control de variables mediante: medición de pH en línea o manual, ajuste de bombas dosificadoras de reactivos ,control de densidad de pulpa (%)</li>
+              <li>Toma de muestras antes y después del cambio para comparar:ley, recuperación,calidad del concentrado.</li>
+              <li>Evaluación de resultados mediante balances metalúrgicos para validar mejoras.Implementación de ajustes en operación si se observa mejora en recuperación o estabilidad del proceso.</li>
             </ul>
           </article>
         </div>
@@ -870,10 +867,11 @@ C(t+Δt) = C(t) + (Δt/6)(k1 + 2k2 + 2k3 + k4)
             <span class="tag">Sistema de producción minero</span>
             <h3>Estructura de operación moderna</h3>
             <ul class="clean">
-              <li><strong>Extracción:</strong> minado subterráneo o a cielo abierto y transporte de mineral.</li>
-              <li><strong>Procesamiento:</strong> trituración, molienda, flotación o lixiviación y recuperación de metal.</li>
-              <li><strong>Gestión de residuos:</strong> manejo de jales y soluciones residuales.</li>
-              <li><strong>Control y automatización:</strong> sensores, SCADA y PLCs en planta.</li>
+              <li>Monitoreo en tiempo real de variables críticas como pH, aireación, nivel de pulpa y dosificación de reactivos.</li>
+              <li>Uso de sensores para control operativo en flotación y molienda.</li>
+              <li>Aplicación de control automático (PID) para mantener estabilidad en el proceso.</li>
+              <li>Análisis de datos para detectar desviaciones y mejorar la recuperación metalúrgica.</li>
+              <li>Relación entre variables operativas y desempeño del proceso para optimización continua.</li>
             </ul>
           </article>
 
@@ -919,24 +917,6 @@ C(t+Δt) = C(t) + (Δt/6)(k1 + 2k2 + 2k3 + k4)
       </div>
     </section>
 
-    <section class="section" id="integracion">
-      <div class="container">
-        <div class="section-title">
-          <h2>7. Integración total del perfil a minería</h2>
-          <p class="section-subtitle">
-            El perfil combina tres niveles estratégicos que aportan valor técnico y operativo a una operación minera moderna.
-          </p>
-        </div>
-
-        <div class="three-col">
-          <article class="section-card">
-            <span class="tag">Nivel analítico</span>
-            <ul class="clean">
-              <li>Cuantificación de metales.</li>
-              <li>Validación y confiabilidad de datos.</li>
-              <li>Interpretación química con impacto operacional.</li>
-            </ul>
-          </article>
 
           <article class="section-card">
             <span class="tag">Nivel de proceso</span>
@@ -985,22 +965,6 @@ C(t+Δt) = C(t) + (Δt/6)(k1 + 2k2 + 2k3 + k4)
         </div>
       </div>
     </section>
-
-    <section class="section" id="entrevista">
-      <div class="container">
-        <div class="section-title">
-          <h2>8. Resumen final para entrevista</h2>
-        </div>
-
-        <div class="quote-card">
-          <blockquote>
-            “Mi experiencia integra análisis químico instrumental, evaluación de procesos hidrometalúrgicos y comprensión de sistemas operativos en minería. He trabajado desde la toma de muestra hasta la interpretación metalúrgica, incluyendo modelado y optimización de procesos. Además, tengo una visión de digitalización y control de procesos mediante herramientas tecnológicas, lo que me permite aportar tanto en operación como en mejora continua y modernización de sistemas mineros.”
-          </blockquote>
-        </div>
-      </div>
-    </section>
-  </main>
-
   <footer class="footer">
     <div class="container">
       <div class="footer-card">
