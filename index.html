@@ -741,14 +741,17 @@
 
         <div class="timeline">
           <article class="step">
-            <div class="step-number">3. Lixiviación de litio – ruta metalúrgica integral</div>
-            <h3>Contribución técnica</h3>
-            <ul class="clean">
-              <li><strong>Conminución:</strong> trituración y molienda para control de liberación mineral y optimización granulométrica.</li>
-              <li><strong>Flotación selectiva:</strong> preconcentración del mineral valioso y reducción de masa tratada en lixiviación.</li>
-              <li><strong>Lixiviación ácida:</strong> disolución selectiva del metal con evaluación de pH, concentración de ácido, temperatura, tiempo de residencia y relación sólido-líquido.</li>
-              <li><strong>Cinética de disolución:</strong> evaluación del sistema en el tiempo e identificación de condiciones óptimas de extracción.</li>
-              <li><strong>Balance metalúrgico:</strong> determinación de recuperación global e identificación de pérdidas en el circuito.</li>
+           <div class="step-number">3. Lixiviación de litio – ruta metalúrgica integral</div>
+           <h3>Contribución técnica</h3>
+           <ul class="clean">
+               <li><strong>Conminución:</strong> trituración y molienda controlando la granulometría (P80 objetivo) para asegurar la liberación del mineral portador de litio (espodumena), optimizando la relación entre área superficial y eficiencia en etapas posteriores.</li>
+               <li><strong>Flotación selectiva:</strong> preconcentración del mineral mediante colectores tipo ácidos grasos o aminas, ajustando pH alcalino (~9–11) para favorecer la hidrofobicidad del litio y deprimir ganga (cuarzo/feldespatos), reduciendo la masa a tratar en lixiviación.</li>
+              <li><strong>Lixiviación ácida:</strong> disolución del litio utilizando ácido (comúnmente H₂SO₄), controlando variables como concentración, temperatura elevada, relación sólido-líquido y tiempo de residencia para maximizar la conversión a especies solubles (Li⁺).</li>
+              <li><strong>Purificación y conversión:</strong> obtención de soluciones ricas en litio (ej. cloruro de litio, LiCl), con etapas de ajuste químico para remover impurezas y preparar el sistema para recuperación final.</li>
+              <li><strong>Electrólisis / recuperación:</strong> separación del litio mediante procesos electroquímicos para liberar el metal o sus compuestos, controlando parámetros eléctricos para favorecer la deposición selectiva y separación de especies como cloro.</li>
+              <li><strong>Control analítico:</strong> seguimiento del proceso mediante absorción atómica y emisión atómica para cuantificar litio en cada etapa, validar recuperación y detectar pérdidas metalúrgicas.</li>
+             <li><strong>Cinética y balance metalúrgico:</strong> evaluación del comportamiento del sistema en el tiempo y elaboración de balances de masa-metal para determinar eficiencia global y optimizar condiciones operativas.</li>
+          
             </ul>
             <p>
               Este enfoque demuestra capacidad para diseñar y optimizar circuitos hidrometalúrgicos con aplicación directa a lixiviación de cobre, oro y otros metales.
@@ -759,12 +762,49 @@
             <div class="step-number">4. Lixiviación en columna de cobre</div>
             <h3>Aplicación técnica y modelado del proceso</h3>
             <ul class="clean">
-              <li>Simulación de procesos tipo heap leaching y lixiviación percolante.</li>
-              <li>Evaluación de permeabilidad del lecho, distribución de solución y eficiencia de contacto sólido-líquido.</li>
-              <li>Monitoreo de extracción de Cu²⁺.</li>
-              <li>Análisis de consumo de ácido, tamaño de partícula y tiempo de ciclo.</li>
-              <li>Uso de Runge-Kutta para modelar cinética, predecir recuperación y simular el comportamiento del proceso.</li>
-            </ul>
+            <li><strong>Preparación del mineral:</strong> trituración y clasificación controlando la granulometría (típicamente P80 ~6–12 mm para columna) para asegurar permeabilidad del lecho y evitar canalización o compactación que afecte la percolación.</li>
+
+            <li><strong>Configuración de columna:</strong> carga del mineral en columnas con control de altura de lecho, distribución homogénea y sistema de riego superior para simular condiciones de heap leaching a escala piloto.</li>
+
+            <li><strong>Lixiviación ácida:</strong> aplicación de solución lixiviante (H₂SO₄) en concentraciones típicas de 5–20 g/L, controlando flujo (L/h·m²), relación sólido-líquido y tiempo de residencia para favorecer la disolución de cobre como Cu²⁺.</li>
+
+            <li><strong>Fenómenos de transporte:</strong> evaluación de difusión, percolación y transferencia de masa sólido-líquido, asegurando contacto eficiente entre solución y superficie mineral.</li>
+
+            <li><strong>Monitoreo de extracción:</strong> seguimiento de Cu²⁺ en solución rica (PLS) mediante análisis químico (absorción atómica), construyendo curvas de extracción vs tiempo para determinar recuperación acumulada.</li>
+
+            <li><strong>Consumo de ácido:</strong> evaluación del consumo ácido en función de mineralogía (óxidos, carbonatos), identificando pérdidas por reacciones no deseadas y optimizando dosificación.</li>
+
+            <li><strong>Variables críticas:</strong>
+             - tamaño de partícula (permeabilidad vs área superficial)
+             - tiempo de ciclo (cinética de extracción)
+             - flujo de riego (uniformidad de lixiviación)
+             </li>
+
+            <li><strong>Modelado cinético (Runge-Kutta 4° orden):</strong> desarrollo de un modelo matemático para describir la cinética de lixiviación mediante ecuaciones diferenciales del tipo:
+
+            dC/dt = k·(Cmax − C)
+
+              donde:
+- C = concentración de Cu²⁺ en solución  
+- k = constante cinética  
+- Cmax = concentración máxima teórica  
+
+Implementación en Python usando Runge-Kutta de cuarto orden (RK4) para resolver numéricamente la evolución temporal del sistema, con pasos discretos (Δt) y cálculo iterativo:
+
+k1 = f(t, C)  
+k2 = f(t + Δt/2, C + k1·Δt/2)  
+k3 = f(t + Δt/2, C + k2·Δt/2)  
+k4 = f(t + Δt, C + k3·Δt)  
+
+C(t+Δt) = C(t) + (Δt/6)(k1 + 2k2 + 2k3 + k4)
+
+</li>
+
+<li><strong>Predicción y validación:</strong> ajuste del modelo con datos experimentales para predecir recuperación, validar comportamiento del proceso y evaluar escenarios operativos (tiempo, ácido, granulometría).</li>
+
+<li><strong>Balance metalúrgico:</strong> integración de datos de entrada y salida para cuantificar recuperación global, pérdidas y eficiencia del sistema.</li>
+
+</ul>
             <p>
               El valor principal es la capacidad para anticipar el desempeño de la lixiviación y optimizar condiciones operativas antes del escalamiento a planta.
             </p>
